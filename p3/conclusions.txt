@@ -1,0 +1,16 @@
+Complete the profiling part of the assignment using java flight recorder before 
+answering the following questions.
+
+1.) What can you tell about the performance of your hash table implementation compared to Java's tree map? Explain why it is better/worse.
+
+
+This implementation of a hash table is much more efficient than Java's tree map. The hash table is better because it required much less time to run, compared to the tree map. Specifically, the hash table's put method is multiple times faster than that of the tree map. However, the hash table's  resize method and the tree map's fixAfterInsertion methods required an extremely similar amount of time. Still, as a whole, the hash table was much more efficient than Java's tree map.
+
+
+
+
+
+
+2.) What did you observe in java mission control to come to the conclusion above?
+
+In the hot methods screen, we see the percentage of time that each method required during execution, taken out of the entire run time. The tree map's put method in particular is extremely inefficient comparatively, as it required 49.26% of the runtime, while the hash table's put method and resize method together only required 15.14% of the runtime. This isn't taking into account the tree map's fixAfterInsertion method, which required 8.01% of the runtime and assumedly is the tree map equivalent of the hash table's resize method. Furthermore, we see more general percentages on the overview screen. While the hot methods screen referred to specific methods, the overview screen gives a more general idea of the efficiency of each implementation as a whole. Here we see that Java's tree map implementation (as a whole) required 67.95% of the runtime, while my hash table implementation (as a whole) only required 15.13% of the runtime. The discrepancies in these numbers are large enough that it is easy to see that this hash table is much more efficient than Java's tree map.
